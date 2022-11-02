@@ -1,0 +1,20 @@
+<div class="todocard">
+    <div class="left">
+        <div class="cardheader">
+            <h3>{{ task.title }} </h3>
+            <h3>{{ task.done == true || desactive  ? "✔" : ""}}</h3>
+        </div>
+    
+        <div class="cardbody">
+            <p>{{ task.content }}</p>
+        </div>
+    </div>
+        <div class="right">
+            <div class="cardfooter">
+
+                <button  [disabled]=" task.done  ? desactive == false : desactive " (click)="doneButton()" >{{ task.done  ? "Tache validée" : "Valider la tache"}}</button>
+                <button (click)="deleteTask(task)">Supprimer la Tache</button>
+            </div>
+        </div>
+
+</div>

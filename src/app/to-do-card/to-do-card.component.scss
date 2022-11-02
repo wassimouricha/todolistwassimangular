@@ -1,0 +1,58 @@
+.todocard{
+    display: flex;
+    justify-content: space-between;
+    button,input{
+        border: none;
+        appearance: none;
+        outline: none;
+        background: none;
+
+    }
+
+    button{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        height: 30px;
+        background: white;
+        border-radius: 15px;
+        margin: 5px;
+    }
+    padding: 1rem;
+    background: rgb(158, 158, 158);
+    width: 800px;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    .left{
+        .cardheader{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            h3{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                color: rgb(214, 50, 50);
+            }
+        }
+    
+        .cardbody{
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: grey;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        .cardfooter{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+}

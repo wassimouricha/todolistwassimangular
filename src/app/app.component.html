@@ -1,0 +1,25 @@
+<router-outlet></router-outlet>
+<div class="title">
+  <h1>ToDoList  Wassim</h1>
+</div>
+<form (ngSubmit)="addTask()">
+  <div>
+    <label for="title">Titre de la tache</label>
+    <!-- two way binding ecoute dans les deux sens event + property binding , un changement venant du html change la valeur dans le component.ts et inversement il faut avoir importé le reactiveformsmodule dans app.module.ts -->
+    <input type="text" name="title" id="title" [(ngModel)] ="newTask.title">
+  </div>
+  <div>
+    <label for="title">Tâche à accomplir </label>
+   <textarea name="content" id="content" [(ngModel)]="newTask.content"></textarea>
+  </div>
+  <button type="submit">Ajouter la tache</button>
+  <button (click)="changerValeur()">Mettre à jour la tache</button>
+</form>
+
+<div class="flex">
+
+    <app-to-do-card  *ngFor="let task of task"  [task]="task"></app-to-do-card>
+
+</div>
+
+<button (click)="recupererTask()">Rafraichir la page</button>
