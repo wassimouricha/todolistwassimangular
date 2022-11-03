@@ -8,10 +8,8 @@ import { TaskService } from './Task/task.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todolist';
 
-
-  task: Task[] = [
+  tasks: Task[] = [
     {
       title: "titre",
       content: "contenu"
@@ -28,13 +26,15 @@ export class AppComponent {
 
   ngOnInit(){
     console.log("app chargé");
-    this.task = this.taskService.getTask();
+    console.log(this.tasks);
+    
+    this.tasks = this.taskService.getTask();
     
   }
 
 
   recupererTask()  {
-    this.task = this.taskService.getTask();
+    this.tasks = this.taskService.getTask();
     console.log("page rafraichis ");
     
 
