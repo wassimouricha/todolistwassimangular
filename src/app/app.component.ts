@@ -24,17 +24,26 @@ export class AppComponent {
 
   constructor(private  taskService: TaskService){}
 
-  ngOnInit(){
+  ngOnInit() : void {
     console.log("app chargé");
     console.log(this.tasks);
     
-    this.tasks = this.taskService.getTask();
+    // this.tasks = this.taskService.getTask();
+    this.taskService.getTask()
+    .subscribe((todos: any[]) => {
+      this.tasks = todos.map<Task>((todo: any) => {
+        return {
+          title: todo.title,
+          done: todo.done,
+        }
+      })
+    })
     
   }
 
 
   recupererTask()  {
-    this.tasks = this.taskService.getTask();
+    // this.tasks = this.taskService.getTask();
     console.log("page rafraichis ");
   }
 
@@ -44,9 +53,5 @@ export class AppComponent {
      this.newTask = {title:"", content:""}
    }
 
-  changerValeur(){
-    this.newTask.title = "";
-    this.newTask.content= "";
-  }
 
 }

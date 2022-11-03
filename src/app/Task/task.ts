@@ -1,6 +1,6 @@
 export type Task = {
     title: string;
-    content: string;
+    content?: string;
     done?:Boolean;
 
 }

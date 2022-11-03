@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task';
-
+import { HttpClient } from '@angular/common/http' ;
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,14 +25,17 @@ export class TaskService {
     done: false,},
   ];
 
-  constructor() { }
-
-  getTask(): Task[]{
-    return this.tasks
+  constructor(private httpClient :HttpClient) { }
+  // getTask(): Task[]{
+  getTask(): Observable<any[]>{
+    // envoie une requete http get vers https://jsonplaceholder.typicode.com/todos
+   return  this.httpClient.get<any[]>("https://jsonplaceholder.typicode.com/todos")
+    // return this.tasks
   }
 
-  addTask(task: Task): void{
-    this.tasks.push(task);
+  addTask(task: Task){
+    // this.tasks.push(task);
+    return this.httpClient.post("https://jsonplaceholder.typicode.com/todos", task)
   }
 
   deleteTask(task:Task) :void {

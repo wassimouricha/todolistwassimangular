@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoCardComponent } from './to-do-card/to-do-card.component';
+import { HttpClientModule } from '@angular/common/http' ;
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ToDoCardComponent } from './to-do-card/to-do-card.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
