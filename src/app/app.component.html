@@ -13,6 +13,7 @@
               <textarea name="content" id="content" [(ngModel)]="newTask.content"></textarea>
         </div>
   <button type="submit">Ajouter la tache</button>
+  <p>{{newTask | json}} </p>
   <button (click)="changerValeur()">Mettre à jour la tache</button>
 </form>
 

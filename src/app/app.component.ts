@@ -36,14 +36,12 @@ export class AppComponent {
   recupererTask()  {
     this.tasks = this.taskService.getTask();
     console.log("page rafraichis ");
-    
-
-
   }
 
   addTask(){
     this.taskService.addTask({...this.newTask});
-     
+     console.log("tache ajouté");
+     this.newTask = {title:"", content:""}
    }
 
   changerValeur(){
